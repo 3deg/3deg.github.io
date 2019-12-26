@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>3DegreesAudio PFX</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class='container' id='controller'>
+  <div class='row'>
+    <div class='column' style='margin-top:0%;'>
+    
+      <div style='width:620px; height:1px; background-color: #777;'></div>      
+      <div style='width:620px; height:15px; background-color: #000;'></div>
+
+      <div style='display:flex; flex-direction:row;'>
+  	    <div class='name' style='height:32px'>P90 Preamp+EQ</div>
+        <div style='display:flex; width:12px;'></div>
+        <div style='display:flex; align-items:center; justify-content: center;'><input type='file' style='display:none' id='p90'/><button id='p90'>Program</button></div>
+      </div>
+
+      <p class='text' style='width:620px;'>
+      A smooth overdrive ranging from character enhancing low-gain sounds to screaming
+      multi-stage high gain preamp sounds. The preamp consists of a three-stage
+      amplifier models similar to that of a high-gain tube preamp circuit in a guitar
+      amplifier.  Each stage incorporates soft tube-like clipping as well as pre and
+      post tone shaping resulting in a final preamp output that's smooth and articulate.
+      The preamp is followed by a three-band parametric EQ.
+      The left/right inputs are summed and sent to the preamp.
+      The preamp/EQ audio is sent to both left and right outputs.
+      </p>
+      
+      <div style='width:620px; height:10px; background-color: #000;'></div>
+
+      <img src="pfx_p90.svg" height="250" width="620">
+      <div style='width:620px; height:10px; background-color: #000;'></div>
+
+      <div style='display:flex; flex-direction:row;'>
+  	    <div class='label' style='font-weight:bold; width:110px;'>Sample Presets</div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2a'>High Gain Lead</button2></div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2b'>Modern Crunch</button2></div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2c'>Wet+Dry Fuzz</button2></div>
+      </div>
+
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Volume</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Balance</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Blend</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Preamp - Pre Low Cut</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#FFF' id='LABEL''>Preamp - Emphasis Gain</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#FFF' id='LABEL''>Preamp - Emphasis Freq</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#FFF' id='LABEL''>Preamp - Tube Type/Bias</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#FFF' id='LABEL''>Preamp - Stage Gain</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Preamp - Post High Cut</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Lower EQ - Gain</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#FFF' id='LABEL''>Lower EQ - Frequency</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Middle EQ - Gain</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#FFF' id='LABEL''>Middle EQ - Frequency</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Upper EQ - Gain</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#FFF' id='LABEL''>Upper EQ - Frequency</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_01_00'></input>
+      </div>
+
+      <div style='width:620px; height:10px; background-color: #000;'></div>
+      <div style='width:620px; height:1px; background-color: #777;'></div>      
+      <div style='width:620px; height:15px; background-color: #000;'></div>
+
+      <div style='display:flex; flex-direction:row;'>
+  	    <div class='name' style='height:32px'>D41 Delay+Modulation</div>
+        <div style='display:flex; width:12px;'></div>
+        <div style='display:flex; align-items:center; justify-content: center;'><input type='file' style='display:none' id='p90'/><button id='p90'>Program</button></div>
+      </div>
+
+      <p class='text' style='width:620px;'>
+      Create lush and ethereal tones. These effects are what make a track feel like it's larger than life. Effects like reverb and delay alter the timing of a signal to help create a sense of space. They can make a track sound bigger, wider, or deeper. They can be used to subtly push an instrument back in the mix or simply to add excitement.
+      </p>
+      
+      <div style='width:620px; height:2px; background-color: #000;'></div>
+
+      <img src="pfx_d41.svg" height="250" width="620">
+      <div style='width:620px; height:10px; background-color: #000;'></div>
+
+      <div style='display:flex; flex-direction:row;'>
+  	    <div class='label' style='font-weight:bold; width:110px;'>Sample Presets</div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2a'>Standard Chorus</button2></div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2b'>Swirling Reverb</button2></div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2c'>Repeated Pitch Shifting</button2></div>
+      </div>
+
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Volume</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Balance</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Blend</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Input - Pitch Shift</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#D8D;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Delay - Time</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8AE;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Delay - Rate</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8AE;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Delay - Depth</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8AE;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Feedback - Reneration</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8AE;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Feedback - Ratio</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8AE;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Feedback - Diffusion</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8AE;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Feedback - Distortion</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Feedback - High Cut</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Feedback - Low Cut</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Feedback - Resonance</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_02_00'></input>
+      </div>
+
+      <div style='width:620px; height:10px; background-color: #000;'></div>
+      <div style='width:620px; height:1px; background-color: #777;'></div>      
+      <div style='width:620px; height:15px; background-color: #000;'></div>
+
+      <div style='display:flex; flex-direction:row;'>
+  	    <div class='name' style='height:32px'>N02 Nostalgia</div>
+        <div style='display:flex; width:12px;'></div>
+        <div style='display:flex; align-items:center; justify-content: center;'><input type='file' style='display:none' id='p90'/><button id='p90'>Program</button></div>
+      </div>
+
+      <p class='text' style='width:620px;'>
+      It seems indeed inevitable that everything which is and has been preserved in matter is likely to be encountered again, and potentially recycled and re-assimilitated. Just like household objects, recorded music objects have been continuously (mass-)produced, commodified and collected ever since the record industry was established at the beginning of the 20th century. Recorded objects appear as fragments and signifiers of past socio-technological realms, whilst songs themselves may involuntarily evoke memories of days gone by.
+      </p>
+      
+      <img src="pfx_n02.svg" height="250" width="620">
+
+      <div style='display:flex; flex-direction:row;'>
+  	    <div class='label' style='font-weight:bold; width:110px;'>Sample Presets</div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2a'>Failing Tape Machine</button2></div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2b'>1930's Broadcast</button2></div>
+        <div style='display:flex; width:8px;'></div>
+        <div style='display:flex; align-items:center; justify-content: left;'><button2 id='p90_2c'>Some Character</button2></div>
+      </div>
+
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Volume</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Output - Balance</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#999;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Input - Preamp Gain</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Input - Preamp Bias</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#E87;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Motion - Record Warp</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#D8D;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Motion - Tape Wow</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#D8D;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Motion - Tape Futter</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#D8D;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Noise - Vinyl Debris</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8DA;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Noise - Tape Hiss</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8DA;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Noise - Radio Static</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8DA;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Noise - Mains Hum</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#8DA;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Filter - Hich Cut</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Filter - Low Cut</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+      <div style='height:16px; width:100%; justify-content:bottom; position:relative;' id='CNTRL_"+ii+"'>
+        <div style='display:flex; position:absolute; padding-left:12px; width:620px;'>
+          <h9 style='pointer-events:none; width:100%; align-items:center; color:#EEE' id='LABEL''>Filter - Resonance</h9>
+          <h9 style='pointer-events: none; color: #EEE' id='SLIDER'>50</h9>
+          <div style='width:20px;'></div>
+        </div> 
+        <input style='position:absolute; background:#CC4;' class='slider' type='range' min='1' max='99' step='1' value='50' id='PAR_03_00'></input>
+      </div>
+
+      <div style='width:620px; height:10px; background-color: #000;'></div>
+      <div style='width:620px; height:1px; background-color: #777;'></div>      
+      <div style='width:620px; height:15px; background-color: #000;'></div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script>var $ = function(id) { return document.getElementById(id); };</script>
+
+<script>
+
+window.addEventListener('load', function()
+{	
+    if(navigator.requestMIDIAccess) {
+        navigator.requestMIDIAccess({sysex:true}).then(_on_midi_success,_on_midi_failure);
+    }
+    else document.write( "USB/MIDI is not available." );
+});
+
+var _midi_input_port = 0, _midi_output_port = 0;
+var _dfu_transfer_count = 0, _dfu_transfer_data = 0, _dfu_transfer_size = 0;
+
+function _on_midi_success( midiAccess )
+{
+    midiAccess.onstatechange = _on_midi_connect;
+    var event = new Object();
+    event.currentTarget = midiAccess;
+    _on_midi_connect( event );
+}
+
+function _on_midi_failure( error ) { document.write( "MIDI access denied." ); }
+
+function _on_midi_connect( event )
+{
+    var midi_access  = event.currentTarget;
+    var midi_inputs  = event.currentTarget.inputs.values ();
+    var midi_outputs = event.currentTarget.outputs.values();
+
+    console.log( midi_inputs );
+
+    for( var port = midi_inputs.next(); !port.done; port = midi_inputs.next() ) {
+        console.log( port.value.manufacturer );
+        console.log( port.value.name );
+        if( port.value.manufacturer.includes("Blooper") || port.value.name.includes("Blooper") ) {
+            port.value.onmidimessage = _on_midi_message;
+            if( port.value.connection == "open" ) _midi_input_port = port.value;
+    }}
+    for( var port = midi_outputs.next(); !port.done; port = midi_outputs.next()) {
+        if( port.value.manufacturer.includes("Blooper") || port.value.name.includes("Blooper") ) {
+            _midi_output_port = port.value;
+    }}
+    _midi_output_port.send( _prop_to_midi( [0x0001,0,0,0,0,0] ));
+}
+
+function array_to_ui1  (a) { return a[0]; }
+function array_to_ui2be(a) { return a[1]+256*a[0]; }
+function array_to_ui2le(a) { return a[0]+256*a[1]; }
+function array_to_ui4be(a) { return 16777216*a[0]+65536*a[1]+256*a[2]+a[3]; }
+function array_to_ui4le(a) { return a[0]+256*a[1]+65536*a[2]+16777216*a[3]; }
+
+function reload_page() { location.reload(); }
+
+function _on_midi_message( event )
+{
+    var property = _midi_to_prop( event.data );
+    if( property[0] == 0 ) return;
+ 	var opcode = property[0] & 0xFFFF;
+    
+    console.log(property[0],property[1].toString(16),property[2].toString(16),property[3].toString(16),property[4].toString(16),property[5].toString(16));
+    
+    // 0x0001 - Identify the device, should be ID (3DEGFLEX) and version numbers
+    if( opcode == 0x0001 )
+    {
+		$('upload_button').onclick = _update_firmware;
+
+    }
+    // 0x0002 - Begin firmware upgrade, echoed back to host
+    // 0x0003 - Next 20 bytes of firmware image data, echoed
+    // 0x0004 - End firmware upgrade and reset (no USB property echo!)
+    else if( opcode == 0x0002 || opcode == 0x0003 )
+    {
+		if( _dfu_transfer_data.length > 0 )
+		{
+			var property = [0x0003,0,0,0,0,0];
+			
+			property[1] = array_to_ui4be( _dfu_transfer_data );
+			_dfu_transfer_data = _dfu_transfer_data.slice(4);
+			property[2] = array_to_ui4be( _dfu_transfer_data );
+			_dfu_transfer_data = _dfu_transfer_data.slice(4);
+			property[3] = array_to_ui4be( _dfu_transfer_data );
+			_dfu_transfer_data = _dfu_transfer_data.slice(4);
+			property[4] = array_to_ui4be( _dfu_transfer_data );
+			_dfu_transfer_data = _dfu_transfer_data.slice(4);
+			
+			_midi_output_port.send( _prop_to_midi( property ));
+			
+			if( _dfu_transfer_count == 0 || (_dfu_transfer_count % 16) == 0 )
+			{
+				progress = (1600.0 * _dfu_transfer_count) / _dfu_transfer_size;
+				if( progress > 99 ) progress = 99;
+				$('upload_button').innerHTML = progress.toPrecision(2) + "\%";				
+			}
+			_dfu_transfer_count += 1;
+		}
+		else
+		{
+            _on_midi_connect_done = 0;
+			var property = [0x0004,0,0,0,0,0];
+			_midi_output_port.send( _prop_to_midi( property ));
+			$('upload_button').innerHTML = "Finished";
+			setTimeout( reload_page, 1000 );
+		}
+    }
+}
+
+function _update_firmware( event )
+{
+    $('upload_button').innerHTML = "...";
+    data = new Uint8Array( _image.length );
+
+    for( var ii = 0; ii < _image.length; ++ii ) data[ii] = _image.charCodeAt(ii);
+
+    _dfu_transfer_count = 0;
+    _dfu_transfer_data = data;
+    _dfu_transfer_size = data.length;
+
+    _midi_output_port.send( _prop_to_midi( [0x0002,0,0,0,0,0] ));
+}
+
+function _update_preset( object )
+{
+	var key = object.target.id, param = 0, preset = 0;
+	
+	//if( key[5] == "_" ) { param = parseInt(key[4]); preset = parseInt(key[6]); }
+	//else { param = 10*parseInt(key[4])+parseInt(key[5]); preset = parseInt(key[7]); }
+
+    //par_03_07_1
+    var mod = 10 * parseInt(key[4]) + parseInt(key[5]);
+    var par = 10 * parseInt(key[7]) + parseInt(key[8]);
+    var lim = 10 * parseInt(key[10]);
+
+	_settings[preset][param] = parseInt( object.target.value );
+
+    var prop = [0x0006+preset,0,0,0,0,0], data = _settings[preset];
+    
+    prop[1] = (data[ 0] << 24) + (data[ 1] << 16) + (data[ 2] << 8) + data[ 3];
+    prop[2] = (data[ 4] << 24) + (data[ 5] << 16) + (data[ 6] << 8) + data[ 7];
+    prop[3] = (data[ 8] << 24) + (data[ 9] << 16) + (data[10] << 8) + data[11];
+    prop[4] = (data[12] << 24) + (data[13] << 16) + (data[14] << 8) + data[15];
+    prop[5] = (data[16] << 24) + (data[17] << 16) + (data[18] << 8) + data[19];
+
+    _midi_output_port.send( _prop_to_midi( prop ));
+}
+
+function _prop_to_midi( property )
+{
+    var midi_data = [0xF0];
+    for( var ii = 0; ii < 6; ++ii )
+    {
+        midi_data.push( (property[ii]>>28)&15 ); midi_data.push( (property[ii]>>24)&15 );
+        midi_data.push( (property[ii]>>20)&15 ); midi_data.push( (property[ii]>>16)&15 );
+        midi_data.push( (property[ii]>>12)&15 ); midi_data.push( (property[ii]>> 8)&15 );
+        midi_data.push( (property[ii]>> 4)&15 ); midi_data.push( (property[ii]>> 0)&15 );
+    }
+    midi_data.push( 0xF7 );
+    return midi_data;
+}
+
+function _midi_to_prop( midi_data )
+{
+    var property = [0,0,0,0,0,0];
+        
+    if( midi_data.length < 50 ) return property;
+    if( midi_data[ 0] != 0xF0 ) return property;
+    if( midi_data[49] != 0xF7 ) return property;
+    
+    for( var ii = 0; ii < 6; ++ii )
+    {
+        property[ii] = (midi_data[8*ii+1]<<28) + (midi_data[8*ii+2]<<24)
+                     + (midi_data[8*ii+3]<<20) + (midi_data[8*ii+4]<<16)
+                     + (midi_data[8*ii+5]<<12) + (midi_data[8*ii+6]<< 8)
+                     + (midi_data[8*ii+7]<< 4) + (midi_data[8*ii+8]<< 0);
+    }
+    return property;
+}
+
+function _property_to_text( property )
+{
+	var text = "";
+	text += String.fromCharCode( property[1]&255, (property[1]>>8)&255, (property[1]>>16)&255, property[1]>>24 );
+	text += String.fromCharCode( property[2]&255, (property[2]>>8)&255, (property[2]>>16)&255, property[2]>>24 );
+	text += String.fromCharCode( property[3]&255, (property[3]>>8)&255, (property[3]>>16)&255, property[3]>>24 );
+	text += String.fromCharCode( property[4]&255, (property[4]>>8)&255, (property[4]>>16)&255, property[4]>>24 );
+	text += String.fromCharCode( property[5]&255, (property[5]>>8)&255, (property[5]>>16)&255, property[5]>>24 );
+	return text;
+}
+
+</script>
+
+<style>
+
+html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; }
+button { overflow: visible; }
+button, select { text-transform: none; }
+
+select {width: 300px;}
+
+button, html input[type="button"],
+input[type="reset"],
+input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+.preset1 { display:flex; align-items:center; justify-content:left; color:#ccc; background-color:#000; border-color:#000; width:96px; height:24px; font-weight:bold;}
+.label1  { display:flex; align-items:center; color:#ccc; background-color:#000; border-color:#000; width:200px; height:24px;}
+.stage1  { display:flex; align-items:center; color:#ccc; background-color:#000; border-color:#000; width:200px; height:24px; font-weight:bold;}
+
+.name  { font-size: 2.0rem; line-height: 1.2; letter-spacing: 0; display:flex; align-items:center; color:#ccc; background-color:#000; border-color:#000; height:24px;}
+.label  { font-size: 1.4rem; line-height: 1.2; letter-spacing: 0; display:flex; align-items:center; color:#ccc; background-color:#000; border-color:#000; height:24px;}
+.text { font-size: 1.4rem; line-height: 1.2; letter-spacing: 0; color:#ccc; background-color:#000; width: 100%; height: 100%; margin: 0 0; padding: 0 0px; }
+.summary { font-size: 1.4rem; line-height: 1.2; letter-spacing: 0; color:#ccc; background-color:#000; display:flex; align-items:center; width: 400px; height: 100%; margin: 0 0; padding: 0 0px; }
+
+.parameter { display:flex; flex-direction:column; align-items:bottom; justify-content:center; background-color:#000; border-color:#000; width:96px; height:24px;}
+
+.filename { display:flex; flex-direction:column; align-items:bottom; justify-content:left; color:#ccc; background-color:#000; border-color:#000;}
+
+.container { position: relative; width: 100%; margin: 0 auto; padding: 0 5px; }
+.column,
+.columns { width: 100%; float: left; box-sizing: border-box; padding: 10px;}
+
+html { font-size: 62.5%; }
+body {
+  font-size: 1.5em; line-height: 0.5; font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #000; color:#CCC }
+
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 1rem; font-weight: 300; }
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.0rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.7rem; line-height: 1.0;  letter-spacing: 0; }
+
+h9 { font-size: 1.2rem; line-height: 1.2;  letter-spacing: 0; }
+
+button, .button { margin-bottom: 1rem; }
+
+.button, button, select, input[type="button"]
+{
+  display: inline-block; height: 32px; padding: 0 10px;
+  text-align: center; font-size: 11px; font-weight: 600;
+  line-height: 32px; letter-spacing: 0rem;
+  text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  background-color: transparent; color: #CCC;
+  box-sizing: border-box; border-radius: 5px; border: 1px solid #BBB;
+  cursor: pointer;
+}
+
+button2, .button2 { margin-bottom: 1rem; }
+
+.button2, button2, select, input[type="button"]
+{
+  display: inline-block; height: 24px; padding: 0 5px;
+  text-align: center; font-size: 10px; font-weight: 500;
+  line-height: 24px; letter-spacing: 0rem;
+  text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  background-color: transparent; color: #CCC;
+  box-sizing: border-box; border-radius: 5px; border: 1px solid #BBB;
+  cursor: pointer;
+}
+
+input.button:hover, button:hover, button2:hover,
+input[type="button"]:hover { color: #EEE; background-color: #357; border-color: #CCC; }
+
+select:hover { color: #EEE; background-color: #357; border-color: #CCC; }
+
+input.button:focus, button:focus,
+input[type="button"]:focus { color: #EEE; background-color: #333; border-color: #888; outline: 0; }
+
+input.button:disabled, button:disabled,
+input[type="button"]:disabled { color: #AAA; background-color: #357; border-color: #BBB; outline: 0; }
+
+input.slider {
+    display:flex; align-items:center; justify-content:left;
+    -webkit-appearance: none; -webkit-transition: .2s;
+    width: 620px; height: 10px; outline: none;
+    border-radius: 3px; border: 1px solid #fff;
+    opacity: 0.5; transition: opacity .2s; padding: 1px;
+    pointer-events: none;
+}
+input.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; opacity: 0.8; 
+    width:48px; height:14px;
+    border-radius: 3px; border: 1px solid #FFF;
+    background: #555;
+    cursor: pointer; pointer-events: auto;
+}
+input.slider::-webkit-slider-thumb:active { background-color: #111; border-color: #fff; opacity: 1.0; } {}
+
+.parameter { display:flex; flex-direction:column; align-items:bottom; justify-content:center;
+             background-color:#000; border-color:#000; width:84px; height:22px;}
+
+</style>
+
+</html>
+
+<script>
+var image_p90='';
+var image_d41='';
+var image_n02='';
+</script>
